@@ -1,0 +1,60 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+/*
+   program: pennies to currency converter
+   Author: [Catherine] [Isikaku]
+   Course: COSC 1436
+   Text Editor/Software Used: Programiz C++ online complier
+   Summary: This program allows the user to input the number of pennies and calculates the equivalent amount in dollars, quarters, dimes, nickels, and pennies.
+*/
+
+/* Input Section:
+   The program takes input from the user for the number of pennies.
+*/
+
+     // Declare constants for coin values
+     const int PENNY_VALUE = 1;
+     const int NICKEL_VALUE = 5;
+     const int DIME_VALUE = 10;
+     const int QUARTER_VALUE = 25;
+     const int DOLLAR_VALUE = 10; 
+     
+
+int main() {
+    
+    //declare variable and initialize them 
+    int penniesInput=0, Dollars=0, DollarsRem=0, Quarters=0, QuartersRem=0, Dimes=0, DimesRem=0, Nickels=0, NickelsRem=0, Pennies=0, PenniesRem=0;
+    //INPUT
+    cout << "How many pennies do you have? ";
+    cin >> penniesInput;
+    //PROCESSING (Calculations)
+    Dollars = penniesInput / 100; //integer divisionn
+    DollarsRem = penniesInput % 100; //modulus operator %
+    
+    //OUTPUT
+    cout << "you have " << Dollars << " dollars";
+    cout << "\n\tPennies left over now = " << DollarsRem << endl;
+    
+    Quarters = DollarsRem / 25;
+    QuartersRem = DollarsRem % 25;
+    cout << "you have " << Quarters << " Quarters";
+    cout << "\n\tThe quarters left over now = " << QuartersRem << endl;
+    
+    Dimes = QuartersRem / 10;
+    DimesRem = QuartersRem % 10;
+    cout << "you have "  << Dimes << " Dimes";
+    cout << "\n\tThe Dimes left over now = " << DimesRem << endl;
+    
+    Nickels = DimesRem / 5;
+    NickelsRem = DimesRem % 5;
+    cout << "you have " << Nickels << " Nickels";
+    cout << "\n\tThe nickels left over now = " <<NickelsRem << endl;
+    
+    Pennies = NickelsRem / 1;
+    PenniesRem = NickelsRem % 1;
+    cout << "you have " << Pennies << " Pennies";
+    cout << "\n\tThe Pennies left over now = " << PenniesRem << endl; 
+    
+    return 0;
+}
